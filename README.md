@@ -1,3 +1,3 @@
 # Exemple de MVC Java
 
-Basé sur JavaFX
+Basé sur [JavaFX](https://fr.wikipedia.org/wiki/JavaFX)
