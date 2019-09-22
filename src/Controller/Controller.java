@@ -18,24 +18,19 @@ public class Controller implements ActionListener {
         pos = 0;
     }
 
-    /**** METHODS ****/
+    /**
+     * View send an input to the controller
+     */
     @Override
     public void update(Event event) {
         switch (event) {
             case NEXT_TEXT:
+                // Update the model
+                model.incrementPos();
+                // Notify the view of the update (here the notification take action immediately)
                 view.refreshLabel();
                 break;
         }
-    }
-
-    private int getValuePos() {
-        int _pos = pos;
-        pos++;
-
-        if (pos >= model.getValues().length)
-            pos = 0;
-
-        return _pos;
     }
 
 }

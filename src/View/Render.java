@@ -34,11 +34,12 @@ public class Render extends Parent {
     }
 
     /**** METHODS ****/
-    public void setListenner(ActionListener listenner) {
+    // TODO : this part seems dirty somehow ...
+    public void setListener(ActionListener listener) {
         button.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                listenner.update(Event.NEXT_TEXT);
+                listener.update(Event.NEXT_TEXT);
             }
         });
     }

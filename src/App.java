@@ -22,17 +22,15 @@ public class App extends Application {
     public void start(Stage primaryStage) throws Exception {
 
         model = new Model();
-        view = new View(model, WIDTH,HEIGHT);
+
+        // Passing the model interface 'Data'
+        view = new View(model, WIDTH, HEIGHT);
         controller = new Controller(view, model);
 
+        // Passing the controller interface 'ActionListener'
         view.setActionListener(controller);
 
         primaryStage.setScene(view.getScene());
         primaryStage.show();
-    }
-
-    @Override
-    public void stop(){
-        view.finish();
     }
 }

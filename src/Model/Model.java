@@ -1,6 +1,6 @@
 package Model;
 
-public class Model implements DataSpeaker {
+public class Model implements Data {
 
     private int pos = 0;
     private String[] values = {
@@ -13,15 +13,12 @@ public class Model implements DataSpeaker {
     };
 
     /**** GETTERS and SETTERS ****/
-    public String[] getValues() {
-        return values;
+    public void incrementPos() {
+        pos = (pos+1 >= values.length)? 0 : pos+1;
     }
 
     @Override
-    public String getNextValue() {
-        int _pos = pos;
-        pos = (pos+1 >= values.length)? 0 : pos+1;
-
-        return values[_pos];
+    public String getActiveValue() {
+        return values[pos];
     }
 }
